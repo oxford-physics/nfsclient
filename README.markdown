@@ -4,6 +4,7 @@ This is the nfsclient module. It can be use to mount and unmount nfs directories
 
 It uses hiera hash to get all configuration data from hiera. Example of hiera data to mount two directories
 
+```
 nfsclient::params::mount_dir:
   '/local_area':
         owner: root
@@ -27,7 +28,7 @@ nfsclient::params::mount_point:
          ensure  : "mounted"
          options : "nfsvers=3,tcp,noatime,hard,intr,exec,rw,bg,nosuid"
          atboot  : true
-
+```
 
 
 Directories can be unmounted by changing "mounted" to "absent"
