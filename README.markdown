@@ -33,6 +33,8 @@ nfsclient::params::mount_point:
 
 Directories can be unmounted by changing "mounted" to "absent"
 
-Limitation : I could n't manage to chain two 'create_resource' statements. So sometimes if dir is not created first then mount fails but eventually in two puppet run it will be mounted 
+#Limitation 
+
+I could n't manage to chain two 'create_resource' statements. So sometimes if dir is not created first then mount fails but eventually in two puppet run it will be mounted 
 
 
