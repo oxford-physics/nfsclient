@@ -11,7 +11,18 @@
 # Sample Usage:
 #
 class nfsclient inherits nfsclient::params {
-  ensure_packages ( ['nfs_utils'])
+  ensure_packages ( ['nfs-utils'])
+
+  service { 'rpcbind':
+    name       => 'rpcbind',
+    ensure     => running,
+    enable     => true,
+    hasrestart => true,
+    hasstatus  => true,
+    subscribe => Package['nfs-utils'],
+  }
+
+  
   $dir_default = {
     'ensure' => 'directory'
   }
