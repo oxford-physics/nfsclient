@@ -24,7 +24,7 @@ class nfsclient inherits nfsclient::params {
 
     
   $dir_default = {
-    'ensure' => 'directory'
+    'ensure' => 'directory',
   }
   $mount_default = {    
     'ensure' => 'mounted',
@@ -32,5 +32,5 @@ class nfsclient inherits nfsclient::params {
   }
   create_resources (file, $mount_dir, $dir_default)
   create_resources (mount,$mount_point, $mount_default)
-
+  File <| |> -> Mount <| |>
 }
