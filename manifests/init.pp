@@ -12,7 +12,7 @@
 #
 class nfsclient inherits nfsclient::params {
   ensure_packages ( ['nfs-utils'])
-  
+
   service { 'rpcbind':
     name       => 'rpcbind',
     ensure     => running,
