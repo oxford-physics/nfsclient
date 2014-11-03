@@ -32,5 +32,8 @@ class nfsclient inherits nfsclient::params {
   }
   create_resources (file, $mount_dir, $dir_default)
   create_resources (mount,$mount_point, $mount_default)
-  File <| |> -> Mount <| |>
+#apache needs the mount before checking file existence
+#nfs client needs the file (dir) before the mount exists.
+#What to do ?
+#  File <| |> -> Mount <| |>
 }
